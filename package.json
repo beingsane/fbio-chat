@@ -1,0 +1,15 @@
+{
+    "name": "Fbio-chat",
+    "description": "A just chat with socket.io",
+    "url" : "https://github.com/fabiorogeriosj/fbio-chat",
+    "main" : "chat.js",
+    "version": "0.1.0",
+    "author": "fabiorogeriosj",
+    "email:": "fabiorogeriosj@gmail.com",
+    "dependencies": {
+    	"express":">= 3.4.7",
+    	"socket.io":">= 0.9.16",
+    	"socket.io-stream":">= 0.5.2",
+    	"sqlite3":">= 2.2.0"
+    }
+}
