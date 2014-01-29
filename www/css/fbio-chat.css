@@ -1,0 +1,39 @@
+.fbio-chat-box .color-primary {
+	background-color: #f08f5a;
+	color: #fff;
+}
+.fbio-chat-box {
+	background-color: #fff;
+	-webkit-box-shadow: 0 0 3px 0 #C4C4C4;
+	box-shadow: 0 0 3px 0 #C4C4C4;
+	width: 230px;
+	position: fixed;
+	right: 5px;
+	bottom: 0;
+	font-size: 12px;
+	box-sizing: border-box;
+}
+.fbio-chat-box label {
+	display: block;
+}
+.fbio-chat-box input {
+	padding: 10px;
+	color: #8c8c8c;
+	border: none;
+	outline: none;
+	width: 100%;
+}
+.fbio-chat-box button {
+	border: none;
+	outline: none;
+	padding: 8px;
+	width: 95%;
+	margin-left: 5px;
+	cursor: pointer;
+}
+.fbio-chat-login-focus {
+	display: none;
+}
+.fbio-chat-box .clr {
+	clear: both;
+}

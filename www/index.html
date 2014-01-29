@@ -2,9 +2,24 @@
 <head>
     <title>FbioChat</title>
     <link rel="stylesheet" type="text/css" href="/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="/css/fbio-chat.css">
     <script type="text/javascript" src="/js/socket.io.min.js"></script>
+	<script type="text/javascript" src="/js/socket.io-stream.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/fbio-chat.js"></script>
 </head>
 <body>
-<p>Code in here...</p>
+	<p>Code in here...</p>
+
+
+	<div class="fbio-chat-box">
+		<input type="text" id="fbio-chat-email" placeholder="Enter your email for chat">
+		<div class="fbio-chat-login-focus">
+			<input type="text" id="fbio-chat-name" placeholder="Enter your name">
+			<button class="color-primary">Sign in to chat</button>
+		</div>
+	</div>
+
+
 </body>
 </html>
