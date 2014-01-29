@@ -23,7 +23,16 @@ window.onload = function (){
 			}
 		});
 		$('.fbio-chat-box button').click(function (){
-			alert(1);
+			var socket = io.connect();
+		    socket.on('connect', function(){
+		        var user = {};
+		        user.email = $('.fbio-chat-box #fbio-chat-email').val();
+		        user.name = $('.fbio-chat-box #fbio-chat-name').val();
+		        socket.emit('adduser', user);
+		    });
+		    socket.on('updatechat-users', function (users) {
+		        $('.fbio-chat-box').empty();
+		    });
 		});
 	}
 }
