@@ -7,7 +7,8 @@
     "author": "fabiorogeriosj",
     "email:": "fabiorogeriosj@gmail.com",
     "dependencies": {
-    	"express":">= 3.4.7",
+        "express":">= 3.4.7",
+    	"MD5":">= 1.2.0",
     	"socket.io":">= 0.9.16",
     	"socket.io-stream":">= 0.5.2",
     	"sqlite3":">= 2.2.0"

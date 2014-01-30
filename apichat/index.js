@@ -15,6 +15,8 @@ ApiChat.prototype = {
 		self.io = this.io.listen(server);
 		self.io.sockets.on('connection', function (socket) {
 		  	socket.on('adduser', function (data) {
+		  		var md5 = require('MD5');
+		  		data.emailmd5 = md5('message');
 		    	socket.username = data.email;
 		        self.users.push(data);
 		        socket.emit('updatechat-users', self.users);

@@ -2,6 +2,9 @@
 	background-color: #f08f5a;
 	color: #fff;
 }
+.fc-loged {
+	display: none;
+}
 .fbio-chat-box {
 	background-color: #fff;
 	-webkit-box-shadow: 0 0 3px 0 #C4C4C4;
@@ -12,6 +15,7 @@
 	bottom: 0;
 	font-size: 12px;
 	box-sizing: border-box;
+	max-height: 100%;
 }
 .fbio-chat-box label {
 	display: block;

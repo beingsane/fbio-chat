@@ -31,7 +31,10 @@ window.onload = function (){
 		        socket.emit('adduser', user);
 		    });
 		    socket.on('updatechat-users', function (users) {
-		        $('.fbio-chat-box').empty();
+		    	console.log(users);
+		        $('.fbio-chat-box .fc-login').clearQueue().stop().slideToggle("slow", function (){
+		        	$('.fbio-chat-box .fc-loged').clearQueue().stop().slideToggle("slow");
+		        });
 		    });
 		});
 	}
