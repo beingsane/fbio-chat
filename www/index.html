@@ -3,6 +3,7 @@
     <title>FbioChat</title>
     <link rel="stylesheet" type="text/css" href="/css/basic.css">
     <link rel="stylesheet" type="text/css" href="/css/fbio-chat.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,800' rel='stylesheet' type='text/css'>
     <script type="text/javascript" src="/js/socket.io.min.js"></script>
 	<script type="text/javascript" src="/js/socket.io-stream.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
@@ -23,14 +24,104 @@
 	<div class="fbio-chat-box">
 		<div class="fbio-chat-box-room">
 			<div class="fbio-chat-profile">
-				<div class="fbio-chat-photo">
-					<img src="https://2.gravatar.com/avatar/56cb30f6ac7e37439f1e7d3d27a68e03" width="37px">
+				<div class="fbio-chat-content">
+					<div class="fc-ico-config"></div>
+					<div class="fbio-chat-photo">
+						<img src="https://2.gravatar.com/avatar/56cb30f6ac7e37439f1e7d3d27a68e03" width="37px">
+					</div>
+					<div class="fbio-chat-info">
+						<div class="fbio-chat-title">Fábio Rogério SJ</div>
+						<div class="fbio-chat-status"><div title="Online" class="fc-status-ico fc-online"></div>JavaScript is the best</div>
+					</div>
+					<div class="clr"></div>
 				</div>
-				<div class="fbio-chat-info">
-					<div class="fbio-chat-title">Fábio Rogério SJ</div>
-					<h5 class="fbio-chat-status">JavaScript is the best</h5>
+			</div>
+
+			<div class="fc-users">
+				<div class="fc-user">
+					<div class="fc-ico-from-web" title="Web browser"></div>
+					<div class="fc-user-photo fc-user-online">
+						<img src="https://2.gravatar.com/avatar/56cb30f6ac7e37439f1e7d3d27a68e03" width="37px">
+					</div>
+					<div class="fbio-user-info">
+						<div class="fbio-user-title">Fábio Rogério SJ</div>
+						<div class="fbio-user-status">JavaScript is the best</div>
+					</div>
 				</div>
 				<div class="clr"></div>
+				<div class="fc-user">
+					<div class="fc-ico-from-mobile" title="Modile"></div>
+					<div class="fc-user-photo fc-user-online">
+						<img src="https://2.gravatar.com/avatar/56cb30f6ac7e37439f1e7d3d27a68e03" width="37px">
+					</div>
+					<div class="fbio-user-info">
+						<div class="fbio-user-title">Fábio Rogério SJ</div>
+						<div class="fbio-user-status">JavaScript is the best</div>
+					</div>
+				</div>
+				<div class="clr"></div>
+				<div class="fc-user">
+					<div class="fc-ico-from-web" title="Modile"></div>
+					<div class="fc-user-photo fc-user-online">
+						<img src="https://2.gravatar.com/avatar/56cb30f6ac7e37439f1e7d3d27a68e03" width="37px">
+					</div>
+					<div class="fbio-user-info">
+						<div class="fbio-user-title">Fábio Rogério SJ</div>
+						<div class="fbio-user-status">JavaScript is the best</div>
+					</div>
+				</div>
+				<div class="clr"></div>
+				<div class="fc-user">
+					<div class="fc-ico-from-mobile" title="Modile"></div>
+					<div class="fc-user-photo fc-user-online">
+						<img src="https://2.gravatar.com/avatar/56cb30f6ac7e37439f1e7d3d27a68e03" width="37px">
+					</div>
+					<div class="fbio-user-info">
+						<div class="fbio-user-title">Fábio Rogério SJ</div>
+						<div class="fbio-user-status">JavaScript is the best</div>
+					</div>
+				</div>
+			</div>
+			<div class="fc-separator">
+				Talk to everyone
+			</div>
+			<div class="fc-talks">
+				<div class="fc-talk">
+					<div class="fc-ico-time" title="214-10-10 15:00:00"></div>
+					<div class="fc-user-talk">
+						<img src="https://2.gravatar.com/avatar/56cb30f6ac7e37439f1e7d3d27a68e03" width="30px">
+					</div>
+					<div class="fbio-user-info">
+						<div class="fc-user-name-talk">Fábio Rogério SJ said:</div>
+						<div class="fc-user-talkto">Hello guys, how are you?</div>
+					</div>
+				</div>
+				<div class="fc-talk">
+					<div class="fc-ico-time" title="214-10-10 15:00:00"></div>
+					<div class="fc-user-talk">
+						<img src="https://2.gravatar.com/avatar/56cb30f6ac7e37439f1e7d3d27a68e03" width="30px">
+					</div>
+					<div class="fbio-user-info">
+						<div class="fc-user-name-talk">Fábio Rogério SJ said:</div>
+						<div class="fc-user-talkto">I’m very good, tranks! And you man? What to do today?</div>
+					</div>
+				</div>
+				<div class="fc-talk">
+					<div class="fc-ico-time" title="214-10-10 15:00:00"></div>
+					<div class="fc-user-talk">
+						<img src="https://2.gravatar.com/avatar/56cb30f6ac7e37439f1e7d3d27a68e03" width="30px">
+					</div>
+					<div class="fbio-user-info">
+						<div class="fc-user-name-talk">Fábio Rogério SJ said:</div>
+						<div class="fc-user-talkto">I'm very good too. Thanks!</div>
+					</div>
+				</div>
+			</div>
+			<div class="fc-write">
+				<div class="fc-input-write">
+					<input type="text" id="fc-input-msg" placeholder="Write something...">
+				</div>
+				<div class="fc-ico-file"></div>
 			</div>
 		</div>
 	</div>

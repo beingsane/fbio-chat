@@ -19,3 +19,6 @@ app.get('/css/*', function(req, res){
 app.get('/js/*', function(req, res){
   res.sendfile(path.join(config.app.pathwww, '/js/', req.params[0]));
 });
+app.get('/images/*', function(req, res){
+  res.sendfile(path.join(config.app.pathwww, '/images/', req.params[0]));
+});
