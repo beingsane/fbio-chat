@@ -48,18 +48,26 @@ window.onload = function (){
 		    		$('#link-remove-img-profile').css('display','none');
 		    	}
 			}
+			var detectmob = function () { 
+				if( navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i)){
+					return true;
+				} else {
+				    return false;
+				}
+			}
 			if (localStorage.getItem('textstatus') !== null){
 				$('.fc-status input').val(localStorage.getItem('status'));
 			}
 		    socket.on('connect', function(){
 		        user.email = $('.fc-box #fc-email').val();
 		        user.name = $('.fc-box #fc-name').val();
+		        user.inMobile = detectmob();
 		        user.textstatus = $('.fc-status input').val();
 		        localStorage.setItem('email', user.email);
 		        localStorage.setItem('name', user.name);
 		        socket.emit('adduser', user);
 		    });
-		    socket.on('updatechat-users', function (me, users) {
+		    socket.on('update-my-user', function (me, users) {
 		    	console.log(users);
 		        $('.fc-box .fc-login').clearQueue().stop().slideToggle("slow", function (){
 		        	$('.fc-photo img').attr('src', me.photouser);
@@ -101,6 +109,7 @@ window.onload = function (){
 		        	$('.fc-icon-status').clearQueue().stop().slideToggle("slow");
 		        });
 		        $('.fc-input-photo').change(function (e){
+		        	console.log('TARGET: ',e.target.files[0]);
 		        	var file = e.target.files[0];
 		            var stream = ss.createStream();
 		            ss(socket).emit('send-photo', stream, file, user);
@@ -120,6 +129,9 @@ window.onload = function (){
 					});
 					blobStream.pipe(stream);
 		        });
+		    });
+			socket.on('updatechat-users', function (users) {
+		    	console.log(users);
 		    });
 			socket.on('update-my-photo', function (user) {
 		    	$('.fc-photo img').attr('src', user.photouser);

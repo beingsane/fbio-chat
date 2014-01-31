@@ -21,13 +21,14 @@ ApiChat.prototype = {
 		    	socket.username = data.email;
 		    	data.photouser = self.getPhotoUser(data.emailmd5);
 		        self.users.push(data);
-		        socket.emit('updatechat-users', data, self.users);
+		        socket.emit('update-my-user', data, self.users);
 		        socket.broadcast.emit('updatechat-users', self.users);
 		  	});
 		  	socket.on('update-text-status', function (user) {
 		        socket.broadcast.emit('update-status-user', user);
 		  	});
 		  	self.ss(socket).on('send-photo', function(stream, data, user) {
+		  		console.log('LOGCHAT: ', data);
 		  		if (data !== null) {
 		  			var extention = self.getExtension(self.path.basename(data.name));
 			        if(self.findPhotoUser(self.md5(user.email)) !== ""){
