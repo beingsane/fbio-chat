@@ -1,11 +1,11 @@
-.fbio-chat-box .color-primary {
+.fc-box .color-primary {
 	background-color: #f08f5a;
 	color: #fff;
 }
 .fc-loged {
 	display: none;
 }
-.fbio-chat-box {
+.fc-box {
 	background-color: #fff;
 	-webkit-box-shadow: 0 0 3px 0 #C4C4C4;
 	box-shadow: 0 0 3px 0 #C4C4C4;
@@ -17,17 +17,17 @@
 	box-sizing: border-box;
 	max-height: 100%;
 }
-.fbio-chat-box label {
+.fc-box label {
 	display: block;
 }
-.fbio-chat-box input {
+.fc-box input {
 	padding: 10px;
 	color: #8c8c8c;
 	border: none;
 	outline: none;
 	width: 100%;
 }
-.fbio-chat-box button {
+.fc-box button {
 	border: none;
 	outline: none;
 	padding: 8px;
@@ -35,53 +35,60 @@
 	margin-left: 5px;
 	cursor: pointer;
 }
-.fbio-chat-login-focus {
+.fc-login-focus {
 	display: none;
 }
-.fbio-chat-box .clr {
+.fc-box .clr {
 	clear: both;
 }
-.fbio-chat-box-room {
+.fc-box-room {
 	height: 100%;
 }
-.fbio-chat-profile {
+.fc-profile {
 	background-color: #f08f5a;
 	width: 95%;
 	margin-left: 5px;
 	margin-top: 5px;
-	color: #f2f2f2;
+	color: #fff;
 	font-size: 15px;
 }
-.fbio-chat-content {
+.fc-content {
 	margin-left: 5px;
 	margin-right: 5px;
 	padding-top: 5px;
 }
-.fbio-chat-photo {
+.fc-photo {
 	float: left;
 	margin-right: 10px;
 	margin-bottom: 5px;
 }
-.fbio-chat-photo img{
+.fc-photo img{
 	border:2px solid #fff;
 }
-.fbio-chat-info {
+.fc-info {
 	padding-left: 10px;
 }
-.fbio-chat-title {
+.fc-title {
 	font-weight: 800;
 }
-.fbio-chat-status {
+.fc-status {
 	font-weight: 300;
 	float: left;
 	font-size: 13px;
+	cursor: pointer;
+}
+.fc-status input {
+	padding: 0;
+	background: none;
+	color: #fff;
+	width: 140px;
 	cursor: pointer;
 }
 .fc-status-ico {
 	border-radius: 100%;
 	width: 10px;
     height: 10px;
-    border: 1px solid #f2f2f2;
+    border: 1px solid #fff;
     float: left;
     margin-right: 5px;
     margin-top: 3px;
@@ -140,7 +147,7 @@
 .fc-separator {
 	color: #555555;
 	font-size: 15px;
-	background-color: #f2f2f2;
+	background-color: #fff;
 	padding: 8px;
 	margin: 1px;
 }
@@ -169,4 +176,18 @@
 	margin-top: 10px;
 	margin-right: 10px;
 	cursor: pointer;
+}
+.fc-config {
+	clear: both;
+	text-align: center;
+	padding-bottom: 10px;
+	display: none;
+}
+.fc-config a {
+	cursor: pointer;
+	font-size: 14px;
+	text-decoration: underline;
+}
+.fc-config input {
+	display: none;
 }

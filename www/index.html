@@ -12,25 +12,32 @@
 <body>
 	<p>Code in here...</p>
 
-	<div class="fbio-chat-box">
+	<div class="fc-box">
 		<div class="fc-login">
-			<input type="text" id="fbio-chat-email" placeholder="Enter your email for chat">
-			<div class="fbio-chat-login-focus">
-				<input type="text" id="fbio-chat-name" placeholder="Enter your name">
+			<input type="text" id="fc-email" placeholder="Enter your email for chat">
+			<div class="fc-login-focus">
+				<input type="text" id="fc-name" placeholder="Enter your name">
 				<button class="color-primary">Sign in to chat</button>
 			</div>
 		</div>
 		<div class="fc-loged">
-			<div class="fbio-chat-box-room">
-				<div class="fbio-chat-profile">
-					<div class="fbio-chat-content">
+			<div class="fc-box-room">
+				<div class="fc-profile">
+					<div class="fc-content">
 						<div class="fc-ico-config"></div>
-						<div class="fbio-chat-photo">
-							<img src="https://2.gravatar.com/avatar/56cb30f6ac7e37439f1e7d3d27a68e03" width="37px">
+						<div class="fc-photo">
+							<img src="" width="37px">
 						</div>
-						<div class="fbio-chat-info">
-							<div class="fbio-chat-title">Fábio Rogério SJ</div>
-							<div class="fbio-chat-status"><div title="Online" class="fc-status-ico fc-online"></div>JavaScript is the best</div>
+						<div class="fc-info">
+							<div class="fc-title"></div>
+							<div class="fc-status">
+								<div title="Online" class="fc-status-ico fc-online"></div>
+								<input type="text" id="fc-text-status" readonly value="I'm loged :)" spellcheck="false">
+							</div>
+						</div>
+						<div class="fc-config">
+							<a id="link-alter-img-profile">Update photo</a>
+							<input type="file" class="fc-input-photo">
 						</div>
 						<div class="clr"></div>
 					</div>
