@@ -35,6 +35,19 @@ window.onload = function (){
 				socket.emit('update-text-status', user);
 				localStorage.setItem('textstatus', status);
 			}
+			var CheckLinkRemovePhoto = function (photo){
+				console.log(photo.indexOf('gravatar'));
+				if(photo.indexOf('gravatar') < 0){
+		    		$('#link-remove-img-profile').css('display','block');
+		    		$('#link-remove-img-profile').click(function (){
+		    			socket.emit('remove-photo-user');
+		    			$('.fc-config').clearQueue().stop().slideToggle("slow");
+		    		});
+		    	} else {
+		    		$('#link-remove-img-profile').unbind();
+		    		$('#link-remove-img-profile').css('display','none');
+		    	}
+			}
 			if (localStorage.getItem('textstatus') !== null){
 				$('.fc-status input').val(localStorage.getItem('status'));
 			}
@@ -49,7 +62,8 @@ window.onload = function (){
 		    socket.on('updatechat-users', function (me, users) {
 		    	console.log(users);
 		        $('.fc-box .fc-login').clearQueue().stop().slideToggle("slow", function (){
-		        	$('.fc-photo img').attr('src','http://gravatar.com/avatar/'+me.emailmd5);
+		        	$('.fc-photo img').attr('src', me.photouser);
+		        	CheckLinkRemovePhoto(me.photouser);
 		        	$('.fc-title').text(me.name);
 		        	$('.fc-status input').click(function (){
 		        		$(this).removeAttr('readonly');
@@ -78,12 +92,47 @@ window.onload = function (){
 		        	$('.fc-input-photo').trigger('click');
    					return false;
 		        });
-		        $('.fc-input-photo').change(function (){
-		        	console.log('Alter photo...');
+		        $('.fc-status .fc-status-ico').click(function (){
+		        	$('.fc-icon-status').clearQueue().stop().slideToggle("slow");
 		        });
+		        $('.fc-icon-status .fc-status-ico').click(function (){
+		        	socket.emit('change-status-ico', $(this).attr('status'));
+		        	$('.fc-status .fc-status-ico').attr('class','fc-status-ico ' + $(this).attr('status'));
+		        	$('.fc-icon-status').clearQueue().stop().slideToggle("slow");
+		        });
+		        $('.fc-input-photo').change(function (e){
+		        	var file = e.target.files[0];
+		            var stream = ss.createStream();
+		            ss(socket).emit('send-photo', stream, file, user);
+		            //ss.createBlobReadStream(file).pipe(stream);
+		            var blobStream = ss.createBlobReadStream(file);
+					var size = 0;
+					var textlink = $('#link-alter-img-profile').text();
+					blobStream.on('data', function(chunk) {
+						size += chunk.length;
+						percent = Math.floor(size / file.size * 100);
+						$('#link-alter-img-profile').text(percent + '%');
+						if(percent === 100){
+							$('.fc-config').clearQueue().stop().slideToggle("slow");
+							$('#link-alter-img-profile').text(textlink);
+							socket.emit('send-photo-complete');
+						}
+					});
+					blobStream.pipe(stream);
+		        });
+		    });
+			socket.on('update-my-photo', function (user) {
+		    	$('.fc-photo img').attr('src', user.photouser);
+		    	CheckLinkRemovePhoto(user.photouser);
+		    });
+		    socket.on('update-photo-user', function (user) {
+		    	console.log(user);
 		    });
 		    socket.on('update-status-user', function (user) {
 		    	console.log(user);
+		    });
+		    socket.on('update-status-ico', function (user) {
+		    	console.log('UPDATE ICO', user);
 		    });
 		});
 	}

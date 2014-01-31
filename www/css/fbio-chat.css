@@ -95,6 +95,15 @@
 }
 .fc-status-ico.fc-online {
 	background-color: #24d21b;
+	cursor: pointer;
+}
+.fc-status-ico.fc-inactive {
+	background-color: #d9e017;
+	cursor: pointer;
+}
+.fc-status-ico.fc-offline {
+	background-color: #f43030;
+	cursor: pointer;
 }
 .fc-ico-config {
 	background: url('/images/fbio-chat-ico.png') no-repeat 0 0;
@@ -102,6 +111,11 @@
 	height: 13px;
 	float: right;
 	cursor: pointer;
+}
+.fc-icon-status {
+	height: 20px;
+	display: none;
+	clear: both;
 }
 .fc-users,
 .fc-talk {
@@ -147,7 +161,7 @@
 .fc-separator {
 	color: #555555;
 	font-size: 15px;
-	background-color: #fff;
+	background-color: #f2f2f2;
 	padding: 8px;
 	margin: 1px;
 }
